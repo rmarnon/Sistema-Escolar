@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema-Escolar-Api", "Sistema-Escolar-Api\Sistema-Escolar-Api.csproj", "{6C7B2DF9-C7FD-4955-B0FA-325172DF54B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sistema.Escolar.Api", "Sistema-Escolar-Api\Sistema.Escolar.Api.csproj", "{6C7B2DF9-C7FD-4955-B0FA-325172DF54B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Escolar.Models", "Sistema-Escolar.Models\Sistema.Escolar.Models.csproj", "{632DD1D2-53B9-4A7B-9578-E26319CFD284}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{6C7B2DF9-C7FD-4955-B0FA-325172DF54B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C7B2DF9-C7FD-4955-B0FA-325172DF54B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C7B2DF9-C7FD-4955-B0FA-325172DF54B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{632DD1D2-53B9-4A7B-9578-E26319CFD284}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{632DD1D2-53B9-4A7B-9578-E26319CFD284}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{632DD1D2-53B9-4A7B-9578-E26319CFD284}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{632DD1D2-53B9-4A7B-9578-E26319CFD284}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
