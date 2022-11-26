@@ -1,4 +1,4 @@
-namespace Sistema_Escolar_Api
+namespace Sistema.Escolar.Api
 {
     public class WeatherForecast
     {
