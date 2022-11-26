@@ -1,4 +1,4 @@
-﻿namespace Sistema_Escolar.Models.Enums
+﻿namespace Sistema.Escolar.Models.Enums
 {
     public enum TipoUsuario
     {

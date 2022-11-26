@@ -1,4 +1,4 @@
-﻿namespace Sistema_Escolar.Models.Models
+﻿namespace Sistema.Escolar.Models
 {
     public class AlunoCurso
     {

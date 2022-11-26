@@ -1,6 +1,6 @@
-﻿using Sistema_Escolar.Models.Enums;
+﻿using Sistema.Escolar.Models.Enums;
 
-namespace Sistema_Escolar.Models.Models
+namespace Sistema.Escolar.Models
 {
     public class Usuario
     {

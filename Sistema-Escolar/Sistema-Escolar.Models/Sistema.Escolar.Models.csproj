@@ -1,14 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <RootNamespace>Sistema_Escolar.Models</RootNamespace>
+    <RootNamespace>Sistema.Escolar.Models</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Sistema-Escolar-Api\Sistema.Escolar.Api.csproj" />
-  </ItemGroup>
 
 </Project>
