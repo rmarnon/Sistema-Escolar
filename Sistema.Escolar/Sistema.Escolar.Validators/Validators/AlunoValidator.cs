@@ -95,7 +95,7 @@ namespace Sistema.Escolar.Validators.Validators
         private static bool ValidaIdade(DateTime nascimento)
         {
             var today = DateTime.Today;
-            int idade = today.Year - nascimento.Year;
+            var idade = today.Year - nascimento.Year;
             if (today < nascimento.AddYears(idade)) idade--;
             return idade >= 18;
         }

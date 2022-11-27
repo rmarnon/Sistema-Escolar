@@ -206,14 +206,14 @@ namespace Sistema.Escolar.Tests.UnitTests
         }
 
         [TestMethod]
-        public void Testa_Nascimento_Maior_01_01_2002()
+        public void Testa_Nascimento_Maior_Hoje()
         {
             //Arrange
             var aluno = new Aluno
             {
                 Nome = "Teste nome",
                 Sobrenome = "Teste Sobrenome",
-                Nascimento = new DateTime(2008, 01, 02),
+                Nascimento = DateTime.UtcNow,
                 Cpf = "01234567890"
             };
 
