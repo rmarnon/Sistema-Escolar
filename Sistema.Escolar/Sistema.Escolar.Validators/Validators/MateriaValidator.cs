@@ -1,7 +1,6 @@
 ﻿using FluentValidation;
 using Sistema.Escolar.Models;
 using Sistema.Escolar.Models.Enums;
-using Sistema.Escolar.Validators.Rules;
 
 namespace Sistema.Escolar.Validators.Validators
 {
@@ -9,31 +8,54 @@ namespace Sistema.Escolar.Validators.Validators
     {
         public MateriaValidator()
         {
-            RuleFor(x => x.Nome)
-                .NotEmpty()
-                .WithMessage("Nome deve ser informado")
-                .MaximumLength(50)
-                .WithMessage("Campo 'Nome' permite no máximo 50 caracteres");
+            ValidateNome();
+            ValidateDescricao();
+            ValidateCadastro();
+            ValidateStatus();
+        }
 
-            RuleFor(x => x.Descricao)
-                .NotEmpty()
-                .WithMessage("Descrição deve ser informada")
-                .Must(CharsValidate.Validate)
-                .WithMessage("Campo 'Descrição' aceita apenas letras");
-
-            RuleFor(x => x.Cadastro)
-                .NotEmpty()
-                .WithMessage("Data de cadastro deve ser informado")
-                .Must(x => x.Date < DateTime.Now)
-                .WithMessage("Data de cadastro não pode ser datas futuras");
+        private void ValidateStatus()
+        {
+            RuleFor(x => x.Status)
+               .NotEmpty()
+               .WithMessage("Status da matéria deve ser informado");
 
             RuleFor(x => x.Status)
                 .IsInEnum()
-                .WithMessage("Status informado não é válido")
-                .NotEmpty()
-                .WithMessage("Status da matéria deve ser informado")
+                .WithMessage("Status informado não é válido");
+
+            RuleFor(x => x.Status)
                 .Must(x => x.Equals(Status.Ativo) || x.Equals(Status.Inativo))
                 .WithMessage("Status permitidos [Ativo|Inativo]");
+        }
+
+        private void ValidateCadastro()
+        {
+            RuleFor(x => x.Cadastro)
+                .NotEmpty()
+                .WithMessage("Data de cadastro deve ser informado");
+
+            RuleFor(x => x.Cadastro)
+                .Must(x => x.Date < DateTime.Now)
+                .WithMessage("Data de cadastro não pode ser datas futuras");
+        }
+
+        private void ValidateDescricao()
+        {
+            RuleFor(x => x.Descricao)
+                .NotEmpty()
+                .WithMessage("Descrição deve ser informada");
+        }
+
+        private void ValidateNome()
+        {
+            RuleFor(x => x.Nome)
+                .NotEmpty()
+                .WithMessage("Nome deve ser informado");
+
+            RuleFor(x => x.Nome)
+                .MaximumLength(50)
+                .WithMessage("Campo 'Nome' permite no máximo 50 caracteres");
         }
     }
 }

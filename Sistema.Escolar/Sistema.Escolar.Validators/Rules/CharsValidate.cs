@@ -1,20 +1,9 @@
-﻿namespace Sistema.Escolar.Validators.Rules
+﻿using System.Text.RegularExpressions;
+
+namespace Sistema.Escolar.Validators.Rules
 {
     public static class CharsValidate
     {
-        public static bool Validate(string letras)
-        {
-            var validar = false;
-
-            if (letras is null) return validar;
-
-            foreach (var letra in letras)
-            {
-                validar = !char.IsDigit(letra);
-
-                if (!validar) break;
-            }
-            return validar;
-        }
+        public static bool ValidaTexto(string letras) => new Regex("^[A-Za-z\\s]{1,}$").IsMatch(letras);
     }
 }

@@ -213,7 +213,7 @@ namespace Sistema.Escolar.Tests.UnitTests
             {
                 Nome = "Teste nome",
                 Sobrenome = "Teste Sobrenome",
-                Nascimento = new DateTime(2002, 01, 02),
+                Nascimento = new DateTime(2008, 01, 02),
                 Cpf = "01234567890"
             };
 
