@@ -3,7 +3,7 @@ using Sistema.Escolar.Util;
 
 namespace Sistema.Escolar.BusinessRule.Interfaces
 {
-    public interface IUser
+    public interface IUsuario
     {
         Task<Result<Usuario>> ConectarAsync(string login, string senha);
         Task<Result<Usuario>> CadastrarAsync(Usuario usuario);

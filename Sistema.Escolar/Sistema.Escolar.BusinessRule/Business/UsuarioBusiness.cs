@@ -9,26 +9,26 @@ using System.Net;
 
 namespace Sistema.Escolar.BusinessRule.Business
 {
-    public class UsuarioBusiness : IUser
+    public class UsuarioBusiness : IUsuario
     {
-        private readonly ApplicationContext db;
+        private readonly ApplicationContext context;
         Result<Usuario> result = new Result<Usuario>();
         Usuario user = new Usuario();
 
-        public UsuarioBusiness(ApplicationContext context) => db = context;
+        public UsuarioBusiness(ApplicationContext context) => this.context = context;
 
         public async Task<Result<Usuario>> AlterarLoginAsync(string login, string novoLogin, string senha)
         {
             try
             {
-                using (db)
+                using (context)
                 {
                     var valido = Retorno.ValidaEntrada(new Usuario { Login = novoLogin, Senha = senha, Tipo = TipoUsuario.Aluno });
 
                     if (!valido.IsValid)
                         return Retorno.NaoValidaUsuario(valido);
 
-                    user = await db.Usuarios.FirstOrDefaultAsync(x => x.Login == login);
+                    user = await context.Usuarios.FirstOrDefaultAsync(x => x.Login == login);
 
                     if (user is null)
                         return Retorno.NaoEncontradoUsuario();
@@ -37,7 +37,7 @@ namespace Sistema.Escolar.BusinessRule.Business
                         return Retorno.SenhaInvalida();
 
                     user.Login = novoLogin;
-                    db.SaveChanges();
+                    context.SaveChanges();
 
                     return Retorno.Ok(user);
                 }
@@ -52,14 +52,14 @@ namespace Sistema.Escolar.BusinessRule.Business
         {
             try
             {
-                using (db)
+                using (context)
                 {
                     var valido = Retorno.ValidaEntrada(new Usuario { Login = login, Senha = novaSenha });
 
                     if (!valido.IsValid)
                         return Retorno.NaoValidaUsuario(valido);
 
-                    user = await db.Usuarios.FirstOrDefaultAsync(x => x.Login == login);
+                    user = await context.Usuarios.FirstOrDefaultAsync(x => x.Login == login);
 
                     if (user is null)
                         return Retorno.NaoEncontradoUsuario();
@@ -68,7 +68,7 @@ namespace Sistema.Escolar.BusinessRule.Business
                         return Retorno.SenhaInvalida();
 
                     user.Senha = novaSenha;
-                    db.SaveChanges();
+                    context.SaveChanges();
 
                     return Retorno.Ok(user);
                 }
@@ -88,9 +88,9 @@ namespace Sistema.Escolar.BusinessRule.Business
                 if (!valido.IsValid)
                     return Retorno.NaoValidaUsuario(valido);
 
-                using (db)
+                using (context)
                 {
-                    foreach (var usuario in db.Usuarios)
+                    foreach (var usuario in context.Usuarios)
                     {
                         if (usuario.Login == user.Login)
                         {
@@ -101,8 +101,8 @@ namespace Sistema.Escolar.BusinessRule.Business
                         }
                     }
 
-                    await db.Usuarios.AddAsync(user);
-                    db.SaveChanges();
+                    await context.Usuarios.AddAsync(user);
+                    context.SaveChanges();
 
                     return Retorno.Ok(user);
                 }
@@ -117,9 +117,9 @@ namespace Sistema.Escolar.BusinessRule.Business
         {
             try
             {
-                using (db)
+                using (context)
                 {
-                    user = await db.Usuarios.FirstOrDefaultAsync(x => x.Login == login);
+                    user = await context.Usuarios.FirstOrDefaultAsync(x => x.Login == login);
 
                     if (user is null)
                         return Retorno.NaoEncontradoUsuario();
@@ -145,9 +145,9 @@ namespace Sistema.Escolar.BusinessRule.Business
         {
             try
             {
-                using (db)
+                using (context)
                 {
-                    user = await db.Usuarios.FirstOrDefaultAsync(x => x.Login == login);
+                    user = await context.Usuarios.FirstOrDefaultAsync(x => x.Login == login);
 
                     if (user is null)
                         return Retorno.NaoEncontradoUsuario();
@@ -160,8 +160,8 @@ namespace Sistema.Escolar.BusinessRule.Business
                     if (user.Senha != senha)
                         return Retorno.SenhaInvalida();
 
-                    db.Usuarios.Remove(user);
-                    db.SaveChanges();
+                    context.Usuarios.Remove(user);
+                    context.SaveChanges();
 
                     return Retorno.Ok(user);
                 }

@@ -8,9 +8,9 @@ namespace Sistema.Escolar.Api.Controllers
     [Route("usuario")]
     public class UsuarioController : ControllerBase
     {
-        private readonly IUser _usuario;
+        private readonly IUsuario _usuario;
 
-        public UsuarioController(IUser user) => _usuario = user;
+        public UsuarioController(IUsuario usuario) => _usuario = usuario;
 
         [HttpPost]
         [Route("conecta")]
@@ -19,8 +19,8 @@ namespace Sistema.Escolar.Api.Controllers
 
         [HttpPost]
         [Route("cadastra")]
-        public async Task<IActionResult> CadastrarAsync(Usuario user)
-            => Ok(await _usuario.CadastrarAsync(user));
+        public async Task<IActionResult> CadastrarAsync(Usuario usuario)
+            => Ok(await _usuario.CadastrarAsync(usuario));
 
         [HttpDelete]
         [Route("deleta")]

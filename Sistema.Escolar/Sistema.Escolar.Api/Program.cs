@@ -18,7 +18,8 @@ builder.Services.AddMvc()
 
 builder.Services.AddDbContext<ApplicationContext>();
 
-builder.Services.AddTransient<IUser, UsuarioBusiness>();
+builder.Services.AddTransient<IAluno, AlunoBusiness>();
+builder.Services.AddTransient<IUsuario, UsuarioBusiness>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
