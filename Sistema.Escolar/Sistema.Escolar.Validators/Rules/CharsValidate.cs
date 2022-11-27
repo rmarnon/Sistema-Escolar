@@ -10,7 +10,9 @@
 
             foreach (var letra in letras)
             {
-                if (char.IsDigit(letra)) break;
+                validar = !char.IsDigit(letra);
+
+                if (!validar) break;
             }
             return validar;
         }

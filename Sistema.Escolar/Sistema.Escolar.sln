@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Escolar.Validators"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Escolar.Util", "Sistema.Escolar.Util\Sistema.Escolar.Util.csproj", "{5FBEB7C8-2987-4E11-B511-D97D7798DB94}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Escolar.Tests", "Sistema.Escolar.Tests\Sistema.Escolar.Tests.csproj", "{6E0AB9D2-5EB0-4A26-A470-270FA2DB450E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{5FBEB7C8-2987-4E11-B511-D97D7798DB94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FBEB7C8-2987-4E11-B511-D97D7798DB94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FBEB7C8-2987-4E11-B511-D97D7798DB94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E0AB9D2-5EB0-4A26-A470-270FA2DB450E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E0AB9D2-5EB0-4A26-A470-270FA2DB450E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E0AB9D2-5EB0-4A26-A470-270FA2DB450E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E0AB9D2-5EB0-4A26-A470-270FA2DB450E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
