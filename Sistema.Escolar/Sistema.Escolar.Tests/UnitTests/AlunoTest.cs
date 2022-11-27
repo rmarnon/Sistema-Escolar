@@ -12,7 +12,6 @@ namespace Sistema.Escolar.Tests.UnitTests
         public void Testa_Aluno_True()
         {
             //Arrange
-            var validation = new AlunoValidator();
             var aluno = new Aluno
             {
                 Nome = "Teste Nome",
@@ -22,6 +21,7 @@ namespace Sistema.Escolar.Tests.UnitTests
             };
 
             //Act
+            var validation = new AlunoValidator();
             var result = validation.Validate(aluno);
 
             //Assert
@@ -32,7 +32,6 @@ namespace Sistema.Escolar.Tests.UnitTests
         public void Testa_Nome_Null()
         {
             //Arrange
-            var validation = new AlunoValidator();
             var aluno = new Aluno
             {
                 Nome = null,
@@ -42,6 +41,7 @@ namespace Sistema.Escolar.Tests.UnitTests
             };
 
             //Act
+            var validation = new AlunoValidator();
             var result = validation.Validate(aluno);
 
             //Assert
@@ -52,7 +52,6 @@ namespace Sistema.Escolar.Tests.UnitTests
         public void Testa_Nome_Vazio()
         {
             //Arrange
-            var validation = new AlunoValidator();
             var aluno = new Aluno
             {
                 Nome = string.Empty,
@@ -62,6 +61,7 @@ namespace Sistema.Escolar.Tests.UnitTests
             };
 
             //Act
+            var validation = new AlunoValidator();
             var result = validation.Validate(aluno);
 
             //Assert
@@ -72,7 +72,6 @@ namespace Sistema.Escolar.Tests.UnitTests
         public void Testa_Nome_Com_Numeros()
         {
             //Arrange
-            var validation = new AlunoValidator();
             var aluno = new Aluno
             {
                 Nome = "999999999",
@@ -82,6 +81,7 @@ namespace Sistema.Escolar.Tests.UnitTests
             };
 
             //Act
+            var validation = new AlunoValidator();
             var result = validation.Validate(aluno);
 
             //Assert
@@ -92,7 +92,6 @@ namespace Sistema.Escolar.Tests.UnitTests
         public void Testa_Nome_Com_02_Letras()
         {
             //Arrange
-            var validation = new AlunoValidator();
             var aluno = new Aluno
             {
                 Nome = "Te",
@@ -102,6 +101,7 @@ namespace Sistema.Escolar.Tests.UnitTests
             };
 
             //Act
+            var validation = new AlunoValidator();
             var result = validation.Validate(aluno);
 
             //Assert
@@ -112,7 +112,6 @@ namespace Sistema.Escolar.Tests.UnitTests
         public void Testa_Nome_Com_Muitas_Letras()
         {
             //Arrange
-            var validation = new AlunoValidator();
             var aluno = new Aluno
             {
                 Nome = "TestNomeComMaisDeVinteLetras",
@@ -122,6 +121,7 @@ namespace Sistema.Escolar.Tests.UnitTests
             };
 
             //Act
+            var validation = new AlunoValidator();
             var result = validation.Validate(aluno);
 
             //Assert
@@ -132,7 +132,6 @@ namespace Sistema.Escolar.Tests.UnitTests
         public void Testa_Sobrenome_Com_Muitas_Letras()
         {
             //Arrange
-            var validation = new AlunoValidator();
             var aluno = new Aluno
             {
                 Nome = "Teste",
@@ -142,6 +141,7 @@ namespace Sistema.Escolar.Tests.UnitTests
             };
 
             //Act
+            var validation = new AlunoValidator();
             var result = validation.Validate(aluno);
 
             //Assert
@@ -152,7 +152,6 @@ namespace Sistema.Escolar.Tests.UnitTests
         public void Testa_Nome_Não_Informado()
         {
             //Arrange
-            var validation = new AlunoValidator();
             var aluno = new Aluno
             {
                 Sobrenome = "Teste Sobrenome",
@@ -161,6 +160,7 @@ namespace Sistema.Escolar.Tests.UnitTests
             };
 
             //Act
+            var validation = new AlunoValidator();
             var result = validation.Validate(aluno);
 
             //Assert
@@ -171,7 +171,6 @@ namespace Sistema.Escolar.Tests.UnitTests
         public void Testa_Sobrenomeome_Não_Informado()
         {
             //Arrange
-            var validation = new AlunoValidator();
             var aluno = new Aluno
             {
                 Nome = "Teste sobrenome",
@@ -180,6 +179,7 @@ namespace Sistema.Escolar.Tests.UnitTests
             };
 
             //Act
+            var validation = new AlunoValidator();
             var result = validation.Validate(aluno);
 
             //Assert
@@ -190,7 +190,6 @@ namespace Sistema.Escolar.Tests.UnitTests
         public void Testa_Nascimento_Não_Informado()
         {
             //Arrange
-            var validation = new AlunoValidator();
             var aluno = new Aluno
             {
                 Nome = "Teste Nome",
@@ -199,6 +198,7 @@ namespace Sistema.Escolar.Tests.UnitTests
             };
 
             //Act
+            var validation = new AlunoValidator();
             var result = validation.Validate(aluno);
 
             //Assert
@@ -209,7 +209,6 @@ namespace Sistema.Escolar.Tests.UnitTests
         public void Testa_Nascimento_Maior_01_01_2002()
         {
             //Arrange
-            var validation = new AlunoValidator();
             var aluno = new Aluno
             {
                 Nome = "Teste nome",
@@ -219,6 +218,7 @@ namespace Sistema.Escolar.Tests.UnitTests
             };
 
             //Act
+            var validation = new AlunoValidator();
             var result = validation.Validate(aluno);
 
             //Assert
@@ -229,7 +229,6 @@ namespace Sistema.Escolar.Tests.UnitTests
         public void Testa_CPF_Com_Letras()
         {
             //Arrange
-            var validation = new AlunoValidator();
             var aluno = new Aluno
             {
                 Nome = "Teste nome",
@@ -239,6 +238,7 @@ namespace Sistema.Escolar.Tests.UnitTests
             };
 
             //Act
+            var validation = new AlunoValidator();
             var result = validation.Validate(aluno);
 
             //Assert
@@ -249,7 +249,6 @@ namespace Sistema.Escolar.Tests.UnitTests
         public void Testa_CPF_Com_Muitos_Numeros()
         {
             //Arrange
-            var validation = new AlunoValidator();
             var aluno = new Aluno
             {
                 Nome = "Teste nome",
@@ -259,6 +258,7 @@ namespace Sistema.Escolar.Tests.UnitTests
             };
 
             //Act
+            var validation = new AlunoValidator();
             var result = validation.Validate(aluno);
 
             //Assert
@@ -269,7 +269,6 @@ namespace Sistema.Escolar.Tests.UnitTests
         public void Testa_CPF_Com_Menos_Numeros()
         {
             //Arrange
-            var validation = new AlunoValidator();
             var aluno = new Aluno
             {
                 Nome = "Teste nome",
@@ -279,6 +278,7 @@ namespace Sistema.Escolar.Tests.UnitTests
             };
 
             //Act
+            var validation = new AlunoValidator();
             var result = validation.Validate(aluno);
 
             //Assert
@@ -289,7 +289,6 @@ namespace Sistema.Escolar.Tests.UnitTests
         public void Testa_CPF_vazio()
         {
             //Arrange
-            var validation = new AlunoValidator();
             var aluno = new Aluno
             {
                 Nome = "Teste nome",
@@ -299,6 +298,7 @@ namespace Sistema.Escolar.Tests.UnitTests
             };
 
             //Act
+            var validation = new AlunoValidator();
             var result = validation.Validate(aluno);
 
             //Assert
@@ -309,7 +309,6 @@ namespace Sistema.Escolar.Tests.UnitTests
         public void Testa_CPF_Null()
         {
             //Arrange
-            var validation = new AlunoValidator();
             var aluno = new Aluno
             {
                 Nome = "Teste nome",
@@ -319,6 +318,7 @@ namespace Sistema.Escolar.Tests.UnitTests
             };
 
             //Act
+            var validation = new AlunoValidator();
             var result = validation.Validate(aluno);
 
             //Assert
@@ -329,7 +329,6 @@ namespace Sistema.Escolar.Tests.UnitTests
         public void Testa_CPF_Não_Informado()
         {
             //Arrange
-            var validation = new AlunoValidator();
             var aluno = new Aluno
             {
                 Nome = "Teste nome",
@@ -338,6 +337,7 @@ namespace Sistema.Escolar.Tests.UnitTests
             };
 
             //Act
+            var validation = new AlunoValidator();
             var result = validation.Validate(aluno);
 
             //Assert
@@ -348,7 +348,6 @@ namespace Sistema.Escolar.Tests.UnitTests
         public void Testa_CPF_No_Formato_Padrao()
         {
             //Arrange
-            var validation = new AlunoValidator();
             var aluno = new Aluno
             {
                 Nome = "Teste nome",
@@ -358,6 +357,7 @@ namespace Sistema.Escolar.Tests.UnitTests
             };
 
             //Act
+            var validation = new AlunoValidator();
             var result = validation.Validate(aluno);
 
             //Assert
@@ -368,7 +368,6 @@ namespace Sistema.Escolar.Tests.UnitTests
         public void Testa_CPF_No_Formato_Invalido()
         {
             //Arrange
-            var validation = new AlunoValidator();
             var aluno = new Aluno
             {
                 Nome = "Teste nome",
@@ -378,6 +377,7 @@ namespace Sistema.Escolar.Tests.UnitTests
             };
 
             //Act
+            var validation = new AlunoValidator();
             var result = validation.Validate(aluno);
 
             //Assert
@@ -388,7 +388,6 @@ namespace Sistema.Escolar.Tests.UnitTests
         public void Testa_Matricula_Curso_Ativo()
         {
             //Arrange
-            var validation = new AlunoValidator();
             var aluno = new Aluno
             {
                 Nome = "Teste nome",
@@ -410,6 +409,7 @@ namespace Sistema.Escolar.Tests.UnitTests
             });
 
             //Act
+            var validation = new AlunoValidator();
             var result = validation.Validate(aluno);
 
             //Assert
@@ -420,7 +420,6 @@ namespace Sistema.Escolar.Tests.UnitTests
         public void Testa_Matricula_Curso_Inativo()
         {
             //Arrange
-            var validation = new AlunoValidator();
             var aluno = new Aluno
             {
                 Nome = "Teste nome",
@@ -442,6 +441,7 @@ namespace Sistema.Escolar.Tests.UnitTests
             });
 
             //Act
+            var validation = new AlunoValidator();
             var result = validation.Validate(aluno);
 
             //Assert
@@ -452,7 +452,6 @@ namespace Sistema.Escolar.Tests.UnitTests
         public void Testa_Inserir_Nota_Maxima()
         {
             //Arrange
-            var validation = new AlunoValidator();
             var aluno = new Aluno
             {
                 Nome = "Teste nome",
@@ -477,6 +476,7 @@ namespace Sistema.Escolar.Tests.UnitTests
             });
 
             //Act
+            var validation = new AlunoValidator();
             var result = validation.Validate(aluno);
 
             //Assert
@@ -487,7 +487,6 @@ namespace Sistema.Escolar.Tests.UnitTests
         public void Testa_Inserir_Nota_Zero()
         {
             //Arrange
-            var validation = new AlunoValidator();
             var aluno = new Aluno
             {
                 Nome = "Teste nome",
@@ -512,6 +511,7 @@ namespace Sistema.Escolar.Tests.UnitTests
             });
 
             //Act
+            var validation = new AlunoValidator();
             var result = validation.Validate(aluno);
 
             //Assert
@@ -522,7 +522,6 @@ namespace Sistema.Escolar.Tests.UnitTests
         public void Testa_Inserir_Nota_Negativa()
         {
             //Arrange
-            var validation = new AlunoValidator();
             var aluno = new Aluno
             {
                 Nome = "Teste nome",
@@ -547,6 +546,7 @@ namespace Sistema.Escolar.Tests.UnitTests
             });
 
             //Act
+            var validation = new AlunoValidator();
             var result = validation.Validate(aluno);
 
             //Assert
@@ -557,7 +557,6 @@ namespace Sistema.Escolar.Tests.UnitTests
         public void Testa_Inserir_Nota_Maior_Que_100()
         {
             //Arrange
-            var validation = new AlunoValidator();
             var aluno = new Aluno
             {
                 Nome = "Teste nome",
@@ -582,6 +581,7 @@ namespace Sistema.Escolar.Tests.UnitTests
             });
 
             //Act
+            var validation = new AlunoValidator();
             var result = validation.Validate(aluno);
 
             //Assert
@@ -592,7 +592,6 @@ namespace Sistema.Escolar.Tests.UnitTests
         public void Testa_Nota_Não_Informada_Padrao_Zero()
         {
             //Arrange
-            var validation = new AlunoValidator();
             var aluno = new Aluno
             {
                 Nome = "Teste nome",
@@ -616,6 +615,7 @@ namespace Sistema.Escolar.Tests.UnitTests
             });
 
             //Act
+            var validation = new AlunoValidator();
             var result = validation.Validate(aluno);
 
             //Assert
