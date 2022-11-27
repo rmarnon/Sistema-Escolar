@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Escolar.Models", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Escolar.Repositories", "Sistema.Escolar.Repositories\Sistema.Escolar.Repositories.csproj", "{AF43516F-6CEA-4AC4-A4A8-E68BA034ECF8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Escolar.Validators", "Sistema.Escolar.Validators\Sistema.Escolar.Validators.csproj", "{0D91A018-87AC-4F5A-BF6C-E9E9EDCAAD37}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{AF43516F-6CEA-4AC4-A4A8-E68BA034ECF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF43516F-6CEA-4AC4-A4A8-E68BA034ECF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF43516F-6CEA-4AC4-A4A8-E68BA034ECF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D91A018-87AC-4F5A-BF6C-E9E9EDCAAD37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D91A018-87AC-4F5A-BF6C-E9E9EDCAAD37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D91A018-87AC-4F5A-BF6C-E9E9EDCAAD37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D91A018-87AC-4F5A-BF6C-E9E9EDCAAD37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
