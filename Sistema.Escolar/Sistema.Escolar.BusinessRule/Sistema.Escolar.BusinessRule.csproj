@@ -1,17 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Sistema.Escolar.BusinessRule\Sistema.Escolar.BusinessRule.csproj" />
     <ProjectReference Include="..\Sistema.Escolar.Models\Sistema.Escolar.Models.csproj" />
     <ProjectReference Include="..\Sistema.Escolar.Util\Sistema.Escolar.Util.csproj" />
   </ItemGroup>

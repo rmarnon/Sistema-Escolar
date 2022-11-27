@@ -25,7 +25,7 @@ namespace Sistema.Escolar.Validators.Validators
                 .WithMessage("Status informado não é válido");
 
             RuleFor(x => x.Status)
-                .Must(x => x.Equals(Status.Ativo) || x.Equals(Status.Inativo))
+                .Must(x => !x.Equals(Status.Concluido))
                 .WithMessage("Status permitidos [Ativo|Inativo]");
         }
 

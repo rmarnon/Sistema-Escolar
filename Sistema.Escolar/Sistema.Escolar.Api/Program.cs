@@ -1,11 +1,17 @@
 using Microsoft.OpenApi.Models;
+using Sistema.Escolar.BusinessRule.Business;
+using Sistema.Escolar.BusinessRule.Interfaces;
+using Sistema.Escolar.Repositories.Data;
 using Swashbuckle.AspNetCore.SwaggerUI;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
+builder.Services.AddDbContext<ApplicationContext>();
+
+builder.Services.AddTransient<IUser, UsuarioBusiness>();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(s =>
