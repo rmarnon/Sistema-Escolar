@@ -14,27 +14,27 @@ namespace Sistema.Escolar.Api.Controllers
 
         [HttpPost]
         [Route("conecta")]
-        public ActionResult Conectar(string login, string senha)
-            => Ok(_usuario.ConectarAsync(login, senha));
+        public async Task<IActionResult> ConectarAsync(string login, string senha)
+            => Ok(await _usuario.ConectarAsync(login, senha));
 
         [HttpPost]
         [Route("cadastra")]
-        public ActionResult Cadastrar(Usuario user)
-            => Ok(_usuario.CadastrarAsync(user));
+        public async Task<IActionResult> CadastrarAsync(Usuario user)
+            => Ok(await _usuario.CadastrarAsync(user));
 
         [HttpDelete]
         [Route("deleta")]
-        public ActionResult Deletar(string login, string senha)
-            => Ok(_usuario.ExcluirAsync(login, senha));
+        public async Task<IActionResult> DeletarAsync(string login, string senha)
+            => Ok(await _usuario.ExcluirAsync(login, senha));
 
         [HttpPut]
         [Route("alteraSenha")]
-        public ActionResult AlteraSenha(string login, string senha, string novaSenha)
-            => Ok(_usuario.AlteraSenhaAsync(login, senha, novaSenha));
+        public async Task<IActionResult> AlteraSenhaAsync(string login, string senha, string novaSenha)
+            => Ok(await _usuario.AlteraSenhaAsync(login, senha, novaSenha));
 
         [HttpPut]
         [Route("alteraLogin")]
-        public ActionResult AlteraLogin(string login, string novoLogin, string senha)
-            => Ok(_usuario.AlterarLoginAsync(login, novoLogin, senha));
+        public async Task<IActionResult> AlteraLoginAsync(string login, string novoLogin, string senha)
+            => Ok(await _usuario.AlterarLoginAsync(login, novoLogin, senha));
     }
 }

@@ -1,4 +1,5 @@
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json;
 using Sistema.Escolar.BusinessRule.Business;
 using Sistema.Escolar.BusinessRule.Interfaces;
 using Sistema.Escolar.Repositories.Data;
@@ -8,6 +9,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
+
+builder.Services.AddMvc()
+    .AddNewtonsoftJson(options =>
+    {
+        options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+    });
+
 builder.Services.AddDbContext<ApplicationContext>();
 
 builder.Services.AddTransient<IUser, UsuarioBusiness>();
