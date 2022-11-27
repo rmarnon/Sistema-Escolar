@@ -126,7 +126,7 @@ namespace Sistema.Escolar.Util
             return result;
         }
 
-        public static Result<Materia> NãoValidaMateria(ValidationResult valido)
+        public static Result<Materia> NaoValidaMateria(ValidationResult valido)
         {
             var result = new Result<Materia>
             {
