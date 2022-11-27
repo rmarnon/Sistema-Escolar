@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Sistema.Escolar.Models\Sistema.Escolar.Models.csproj" />
+    <ProjectReference Include="..\Sistema.Escolar.Validators\Sistema.Escolar.Validators.csproj" />
+  </ItemGroup>
+
 </Project>
