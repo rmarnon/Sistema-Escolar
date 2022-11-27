@@ -11,9 +11,9 @@ namespace Sistema.Escolar.BusinessRule.Business
 {
     public class AlunoBusiness : IAluno
     {
-        private readonly ApplicationContext context;
+        private readonly ApplicationContext _context;
 
-        public AlunoBusiness(ApplicationContext context) => this.context = context;
+        public AlunoBusiness(ApplicationContext context) => this._context = context;
         Result<Aluno> result = new();
         Aluno aluno = new();
         Curso curso = new();
@@ -28,9 +28,9 @@ namespace Sistema.Escolar.BusinessRule.Business
                 if (!valido.IsValid)
                     return Retorno.NaoValidaAluno(valido);
 
-                using (context)
+                using (_context)
                 {
-                    foreach (var student in context.Alunos)
+                    foreach (var student in _context.Alunos)
                     {
                         if (student.Cpf == aluno.Cpf)
                         {
@@ -41,7 +41,7 @@ namespace Sistema.Escolar.BusinessRule.Business
                         }
                     }
 
-                    curso = await context.Cursos.FirstOrDefaultAsync(x => x.Nome == nomeCurso);
+                    curso = await _context.Cursos.FirstOrDefaultAsync(x => x.Nome == nomeCurso);
 
                     if (curso is null)
                     {
@@ -61,9 +61,9 @@ namespace Sistema.Escolar.BusinessRule.Business
 
                     var alunoCurso = new AlunoCurso { Aluno = aluno, Curso = curso };
 
-                    context.Entry(aluno).State = EntityState.Added;
-                    context.Entry(alunoCurso).State = EntityState.Added;
-                    context.SaveChanges();
+                    _context.Entry(aluno).State = EntityState.Added;
+                    _context.Entry(alunoCurso).State = EntityState.Added;
+                    _context.SaveChanges();
 
                     return Retorno.Ok(aluno);
                 }
@@ -78,9 +78,9 @@ namespace Sistema.Escolar.BusinessRule.Business
         {
             try
             {
-                using (context)
+                using (_context)
                 {
-                    materia = await context.Materias.FirstOrDefaultAsync(x => x.Nome == nomeMateria);
+                    materia = await _context.Materias.FirstOrDefaultAsync(x => x.Nome == nomeMateria);
 
                     if (materia is null)
                     {
@@ -108,7 +108,7 @@ namespace Sistema.Escolar.BusinessRule.Business
                         return result;
                     }
 
-                    aluno = await context.Alunos.FirstOrDefaultAsync(x => x.Cpf == cpf);
+                    aluno = await _context.Alunos.FirstOrDefaultAsync(x => x.Cpf == cpf);
 
                     if (aluno is null)
                         return Retorno.NaoEncontradoAluno();
@@ -126,7 +126,7 @@ namespace Sistema.Escolar.BusinessRule.Business
                     if (!valido.IsValid)
                         return Retorno.NaoValidaAluno(valido);
 
-                    context.SaveChanges();
+                    _context.SaveChanges();
 
                     return Retorno.Ok(aluno);
                 }
@@ -141,9 +141,9 @@ namespace Sistema.Escolar.BusinessRule.Business
         {
             try
             {
-                using (context)
+                using (_context)
                 {
-                    aluno = await context.Alunos.FirstOrDefaultAsync(x => x.Cpf == cpf);
+                    aluno = await _context.Alunos.FirstOrDefaultAsync(x => x.Cpf == cpf);
 
                     if (aluno is null)
                         return Retorno.NaoEncontradoAluno();
@@ -155,7 +155,7 @@ namespace Sistema.Escolar.BusinessRule.Business
                     if (!valido.IsValid)
                         return Retorno.NaoValidaAluno(valido);
 
-                    context.SaveChanges();
+                    _context.SaveChanges();
 
                     return Retorno.Ok(aluno);
                 }
@@ -170,9 +170,9 @@ namespace Sistema.Escolar.BusinessRule.Business
         {
             try
             {
-                using (context)
+                using (_context)
                 {
-                    aluno = await context.Alunos.FirstOrDefaultAsync(x => x.Cpf == cpf);
+                    aluno = await _context.Alunos.FirstOrDefaultAsync(x => x.Cpf == cpf);
 
                     if (aluno is null)
                         return Retorno.NaoEncontradoAluno();
@@ -184,7 +184,7 @@ namespace Sistema.Escolar.BusinessRule.Business
                     if (!valido.IsValid)
                         return Retorno.NaoValidaAluno(valido);
 
-                    context.SaveChanges();
+                    _context.SaveChanges();
 
                     return Retorno.Ok(aluno);
                 }
@@ -199,15 +199,15 @@ namespace Sistema.Escolar.BusinessRule.Business
         {
             try
             {
-                using (context)
+                using (_context)
                 {
-                    aluno = await context.Alunos.FirstOrDefaultAsync(x => x.Cpf == cpf);
+                    aluno = await _context.Alunos.FirstOrDefaultAsync(x => x.Cpf == cpf);
 
                     if (aluno is null)
                         return Retorno.NaoEncontradoAluno();
 
-                    context.Alunos.Remove(aluno);
-                    context.SaveChanges();
+                    _context.Alunos.Remove(aluno);
+                    _context.SaveChanges();
 
                     return Retorno.Ok(aluno);
                 }

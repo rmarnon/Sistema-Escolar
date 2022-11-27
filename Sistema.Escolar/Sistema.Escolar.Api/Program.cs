@@ -18,6 +18,7 @@ builder.Services.AddMvc()
 
 builder.Services.AddDbContext<ApplicationContext>();
 
+builder.Services.AddTransient<ICurso, CursoBusiness>();
 builder.Services.AddTransient<IAluno, AlunoBusiness>();
 builder.Services.AddTransient<IUsuario, UsuarioBusiness>();
 
