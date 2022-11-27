@@ -4,9 +4,9 @@ using Sistema.Escolar.Models.Enums;
 
 namespace Sistema.Escolar.Validators.Validators
 {
-    public class UsuarioValidation : AbstractValidator<Usuario>
+    public class UsuarioValidator : AbstractValidator<Usuario>
     {
-        public UsuarioValidation()
+        public UsuarioValidator()
         {
             RuleFor(x => x.Login)
                 .NotEmpty()
