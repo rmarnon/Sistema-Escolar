@@ -54,20 +54,21 @@ namespace Sistema.Escolar.BusinessRule.Business
             {
                 using (_context)
                 {
-                    var valido = Retorno.ValidaEntrada(new Usuario { Login = login, Senha = novaSenha });
-
-                    if (!valido.IsValid)
-                        return Retorno.NaoValidaUsuario(valido);
-
                     user = await _context.Usuarios.FirstOrDefaultAsync(x => x.Login == login);
 
                     if (user is null)
                         return Retorno.NaoEncontradoUsuario();
 
+                    var valido = Retorno.ValidaEntrada(new Usuario { Login = login, Senha = novaSenha, Tipo = user.Tipo });
+
+                    if (!valido.IsValid)
+                        return Retorno.NaoValidaUsuario(valido);
+
                     if (user.Senha != senha)
                         return Retorno.SenhaInvalida();
 
                     user.Senha = novaSenha;
+                    _context.Usuarios.Update(user);
                     _context.SaveChanges();
 
                     return Retorno.Ok(user);

@@ -32,8 +32,8 @@ namespace Sistema.Escolar.Api.Controllers
             => Ok(await _aluno.AlterarSobrenomeAsync(cpf, novoSobrenome));
 
         [HttpDelete]
-        [Route("exclui")]
-        public async Task<IActionResult> ExcluiAsync(string nome)
-            => Ok(await _aluno.ExcluirAsync(nome));
+        [Route("deleta")]
+        public async Task<IActionResult> ExcluiAsync(string cpf)
+            => Ok(await _aluno.ExcluirAsync(cpf));
     }
 }
